@@ -4,45 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tushar's Website</title>
-    <link rel="stylesheet" href="Fontpage.css">
-    <link rel="stylesheet" href="Fontpage2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope&family=Merriweather&family=Poppins&family=Sacramento&display=swap"
-        rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="page1">
-        <div class="navbar">
-            <div>Easlo.</div>
-            <div>Option</div>
-        </div>
-        <div class="page">
-            <div class="left">
-                <img src="car.webp"
-                    alt="Advertisement">
-            </div>
-            <div class="right">
-                <div class="article">
-                    <p>Renting a car from Mirpur opens the door to an enriching journey across Bangladesh. </p>
-                </div>
-                <div class="Book">
-                    <button class="book-now">Book Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="ad">
-            <h3>Infinity Advertisement Section......</h3>
-        </div>
+    <div class="container">
+        <form method="post" action="" name="formName">
+            <div class="brand-title">REGISTRATION</div>
+            <div class="inputs">
+
+                <label>Full Name</label>
+                <input name="Name" type="name" placeholder="Enter your name" />
+                <label>Contact Number</label>
+                <input name="Contact Number" type="tel" placeholder="01518722222" />
+                <label>Destination</label>
+                <input name="Destination" type="address" placeholder="Destination address" />
+                <label>Travel Date</label>
+                <input name="Journey Date" type="date" />
+                <button>REGISTRATION</button>
+        </form>
     </div>
-    <div class="page2">
-        <div class="FAQ">
-            <p class="faq1">Faq</p>
-        </div>
     </div>
+
+
+
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx5ZlxIsq03vM6x3AFcgu-KfMIyMDDX7AENI4gham5YPUT-LItWg4DUQsxmOJk2jb_DtA/exec'
+        const form = document.forms['formName']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("Thank you! your form is submitted successfully."))
+                .then(() => { window.location.reload(); })
+                .catch(error => console.error('Error!', error.message))
+        })
+
+    </script>
 </body>
 
 </html>
